@@ -1,3 +1,5 @@
+### This code is a naive example of a pub/sub implementation
+### TASK: improve the model
 import socket
 import sys
 import select

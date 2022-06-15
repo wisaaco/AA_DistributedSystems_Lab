@@ -8,7 +8,7 @@ Grau de Informatica | Grado de Informatica | Computer science degree
 University of Balearic Islands
 
 
-This repository contains the source code and some guided activities to develop the personal skills considered in the subject met.
+This repository contains the source code and some guided activities to develop the personal skills considered in the course met.
 
 
 #### Author [Isaac Lera](https://personal.uib.es/isaac.lera)
