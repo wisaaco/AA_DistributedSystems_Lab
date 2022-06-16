@@ -12,4 +12,3 @@ This project is the based skeleton to design and implement the Maekawa Mutex alg
 - https://github.com/yvetterowe/Maekawa-Mutex
 - https://github.com/Sletheren/Maekawa-JAVA
 - https://www.weizmann.ac.il/sci-tea/benari/software-and-learning-materials/daj-distributed-algorithms-java
-- 
