@@ -1,9 +1,5 @@
-from copy import deepcopy
-from datetime import datetime, timedelta
-from math import ceil, sqrt
-import re
 import select
-from threading import Event, Thread, Timer
+from threading import Thread
 import utils
 from message import Message
 import json
@@ -34,19 +30,17 @@ class NodeServer(Thread):
                     else:
                         try:
                             msg_stream = read_socket.recvfrom(4096)
-
                             for msg in msg_stream:
                                 try:
                                     ms = json.loads(str(msg,"utf-8"))
                                     self.process_message(ms)
                                 except:
                                     None
-                                
                         except:
                             read_socket.close()
                             self.connection_list.remove(read_socket)
-
                             continue
+        
         self.server_socket.close()
 
     def process_message(self, msg):
