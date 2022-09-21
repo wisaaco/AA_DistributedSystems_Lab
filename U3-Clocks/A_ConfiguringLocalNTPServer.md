@@ -110,6 +110,7 @@ timedatectl list-timezones | grep -i tokyo
 
 sudo unlink /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
 cat /etc/localtime
 
 sudo date --set="1980-10-12 10:05:59.990"
@@ -139,4 +140,12 @@ ubuntu@worker1:~$ sudo chronyd -q 'server 192.168.64.8 iburst'
 multipass stop -all
 multipass delete --all
 multipass purge
+```
+
+Restart the date server
+```
+# fix the zoneinfo 
+sudo ln -s /usr/share/zoneinfo/Europe/Madrid /etc/localtime
+
+chronyd -q 'server 0.europe.pool.ntp.org iburst'
 ```
