@@ -1,10 +1,7 @@
-# Practical material. Part I. Distributed Systems.
-Activities of the "Advanced Architectures" course.
-----
-Grau de Informatica | Grado de Informatica | Computer science degree
+#  Laboratory of Distributed Systems in "Arquitecturas Avanzadas" subject
 
 [Subject information](https://estudis.uib.es/es/estudis-de-grau/grau/informatica/GIN2-P/)
-
+[Grau d'Enginyeria Informàtica, UIB] (https://estudis.uib.es/estudis-de-grau/grau/informatica/GIN2-P/)
 University of Balearic Islands
 
 
