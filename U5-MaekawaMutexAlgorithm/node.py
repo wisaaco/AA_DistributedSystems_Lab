@@ -31,7 +31,7 @@ class Node():
         timer.start()
         self.curr_time = datetime.now()
         #wakeup
-        #DO shomething
+        #TODO shomething
 
         
         self.wakeupcounter += 1

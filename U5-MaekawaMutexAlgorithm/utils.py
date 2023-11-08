@@ -3,7 +3,7 @@ import socket
 def create_server_socket(port):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    s.bind(('localhost', port))
+    s.bind(("127.0.0.1", port))
     s.listen()
     return s
 
