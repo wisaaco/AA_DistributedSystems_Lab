@@ -60,6 +60,9 @@ spark.stop()
 Desde
 ```bash
 ./bin/spark-submit --master local SimpleApp.py
+
+./bin/spark-submit --master spark://0.0.0.0:7077 SimpleApp.py
+
 ```
 
 
