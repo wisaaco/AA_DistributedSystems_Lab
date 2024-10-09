@@ -6,7 +6,6 @@ import random
 # The server based on threads for each connection
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     # DOC: ThreadingMixIn define un atributo daemon_threads, que indica si el servidor debe esperar o no la terminación del hilo
-
     daemon_threads = True
     allow_reuse_address = True
 
@@ -110,7 +109,7 @@ class Game():
                 player.game = cls.next_game
                 cls.next_game = None
 
-server = ThreadedTCPServer(('', 9999), PlayerHandler)
+server = ThreadedTCPServer(('', 8088), PlayerHandler)
 try:
     server.serve_forever()
 except KeyboardInterrupt:

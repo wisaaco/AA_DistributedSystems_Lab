@@ -50,7 +50,7 @@ while True:
                         print(topic)
                         channels[topic].append(subscribers[address])
                 if b"pub" in cmd:
-                    topic = str(topic)
+                    topic = str(arg)
                     if topic in channels:
                         for subcriber_adress in channels[topic]:
                             sock2 = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
