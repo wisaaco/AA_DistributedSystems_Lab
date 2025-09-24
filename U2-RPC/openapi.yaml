@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  title: API de Things
+  version: 1.0.0
+  description: API RESTful de ejemplo en Flask
+
+servers:
+  - url: http://localhost:5000/api/v1
+
+paths:
+  /random:
+    get:
+      summary: Obtener un número aleatorio
+      responses:
+        '200':
+          description: Número aleatorio
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  random:
+                    type: number
+  /things:
+    post:
+      summary: Crear un nuevo thing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ThingInput'
+      responses:
+        '201':
+          description: Thing creado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Thing'
+
+  /things/{id}:
+    get:
+      summary: Obtener un thing por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Thing encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Thing'
+        '404':
+          description: Thing no encontrado
+
+components:
+  schemas:
+    Thing:
+      type: object
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
+    ThingInput:
+      type: object
+      required:
+        - nombre
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
+        
