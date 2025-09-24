@@ -1,8 +1,8 @@
 ETCD
 ====
-https://en.wikipedia.org/wiki/Etcd
-https://etcd.io/
-https://hub.docker.com/r/bitnami/etcd
+- https://en.wikipedia.org/wiki/Etcd
+- https://etcd.io/
+- https://hub.docker.com/r/bitnami/etcd
 
 
 docker run -d --name etcd-server \

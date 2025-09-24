@@ -1,5 +1,3 @@
-#Based on: https://realpython.com/api-integration-in-python/
-
 from flask import Flask, request, jsonify
 import random
 app = Flask(__name__)
