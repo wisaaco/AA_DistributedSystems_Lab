@@ -101,6 +101,7 @@ if __name__ == "__main__":
 
 
 # Run: python3 app.py (me: /Users/isaac/.pyenv/versions/3.11.0rc2/envs/my3110/bin/python3 app.py)
-# With curl or browser: http://127.0.0.1:5000/api/v1/random    
+# With curl or browser: http://127.0.0.1:5000/api/v1/random
+# With Swagger: http://127.0.0.1:5000/apidocs/#/
 # curl -i http://127.0.0.1:5000/api/v1/things -X POST -H 'Content-Type: application/json' -d '{"id":4, "name":"Thing Value 4.3"}'
 # openapi.yaml in https://editor.swagger.io/
