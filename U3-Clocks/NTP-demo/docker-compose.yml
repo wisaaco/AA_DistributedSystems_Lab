@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  ntp-master:
+    image: ubuntu:22.04
+    container_name: ntp-master
+    command: ["/bin/bash", "-c", "apt-get update && apt-get install -y chrony tzdata && \
+              ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
+              chronyd -d -x"]
+    volumes:
+      - ./config/master/chrony.conf:/etc/chrony/chrony.conf:ro
+    networks:
+      ntp-net:
+        ipv4_address: 172.20.0.10
+    cap_add:
+      - SYS_TIME
+
+  ntp-client:
+    image: ubuntu:22.04
+    container_name: ntp-client
+    command: ["/bin/bash", "-c", "apt-get update && apt-get install -y chrony tzdata && \
+              ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime && \
+              chronyd -d -x"]
+    volumes:
+      - ./config/client/chrony.conf:/etc/chrony/chrony.conf:ro
+    networks:
+      ntp-net:
+        ipv4_address: 172.20.0.20
+    cap_add:
+      - SYS_TIME
+
+networks:
+  ntp-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
