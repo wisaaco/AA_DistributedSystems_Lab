@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  zookeeper1:
+    image: zookeeper:3.9
+    container_name: zookeeper1
+    hostname: zookeeper1
+    ports:
+      - "2181:2181"
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
+    volumes:
+      - ./zoo.cfg:/conf/zoo.cfg
+      - ./log4j.properties:/conf/log4j.properties
+    networks:
+      - zk-net
+
+  zookeeper2:
+    image: zookeeper:3.9
+    container_name: zookeeper2
+    hostname: zookeeper2
+    ports:
+      - "2182:2181"
+    environment:
+      ZOO_MY_ID: 2
+      ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
+      ZOO_CLIENT_PORT_ADDRESS: 0.0.0.0
+      ZOO_CLIENT_PORT: 2181
+    networks:
+      - zk-net
+
+  zookeeper3:
+    image: zookeeper:3.9
+    container_name: zookeeper3
+    hostname: zookeeper3
+    ports:
+      - "2183:2181"
+    environment:
+      ZOO_MY_ID: 3
+      ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888
+      ZOO_CLIENT_PORT_ADDRESS: 0.0.0.0
+      ZOO_CLIENT_PORT: 2181
+    networks:
+      - zk-net
+
+networks:
+  zk-net:
+    driver: bridge

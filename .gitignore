@@ -5,3 +5,4 @@ NO_*
 .venv/
 
 U5-Coordination/SubastasDeContainers/description.md
+U6-LeaderElection/WithZookeeper/Ignore_mutex.py
