@@ -16,16 +16,18 @@ zk = KazooClient(hosts='localhost:2181')
 zk.start()
 
 # Crear un znode si no existe
-if not zk.exists("/ejemplo"):
-    zk.create("/ejemplo", ephemeral=True)
+
+zk.delete("/ejemplo",recursive=True)
+zk.create("/ejemplo")
+zk.create("/ejemplo/lock-caseA")
+zk.create("/ejemplo/coordinacion")
+zk.create("/ejemplo/coordinacion/nodo1",b"Quiero coordinar")
 
 zk.ensure_path("/ejemplo") # Ensure the path exists
 
-if not zk.exists("/ejemplo/lock-caseA"):
-    zk.create("/ejemplo/lock-caseA")
 
-if not zk.exists("/ejemplo/coordinacion/nodo1"):
-    zk.create("/ejemplo/coordinacion/nodo1",b"Quiero coordinar")
+
+
 
 ########################################################
 
