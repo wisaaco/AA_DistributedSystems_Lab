@@ -46,6 +46,18 @@ print("--------------------------------")
 print("Datos actuales:", data.decode("utf-8"))
 print("Stat: ", stat)
 
+ #ZnodeStat(czxid=4294967303, mzxid=4294967303, ctime=1761139252872, mtime=1761139252872, version=0, cversion=0, aversion=0, ephemeralOwner=72058833900601344, dataLength=0, numChildren=0, pzxid=4294967303)
+ # czxid: Creation ID
+ # mzxid: Modification ID
+ # ctime: Creation time
+ # mtime: Modification time
+ # version: Version
+ # cversion: Child version
+ # aversion: Access Control list ACL version
+ # ephemeralOwner: Ephemeral owner o 0 persistent
+ # dataLength: Data length
+ # numChildren: Number of children
+ # pzxid: Persistent znode ID
 ########################################################
 
 # Crear un nodo de lock
