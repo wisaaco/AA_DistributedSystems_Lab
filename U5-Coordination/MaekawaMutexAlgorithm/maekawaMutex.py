@@ -14,4 +14,7 @@ class MaekawaMutex(object):
     def run(self):
         self.define_connections()
         for node in self.nodes:
-            node.run()
+            node.start()
+
+        for node in self.nodes:
+            node.join()

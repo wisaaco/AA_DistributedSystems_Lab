@@ -7,6 +7,7 @@ services:
     hostname: zookeeper1
     ports:
       - "2181:2181"
+    user: root
     environment:
       ZOO_MY_ID: 1
       ZOO_SERVERS: server.1=zookeeper1:2888:3888 server.2=zookeeper2:2888:3888 server.3=zookeeper3:2888:3888

@@ -6,6 +6,16 @@ A node has two-child threads to manage the communication: a ServerNode (get requ
 
 This project is the based skeleton to design and implement the Maekawa Mutex algorithm with Lamport timestamps.
 
+Execute the basic structure:
+```bash
+uv run main.py
+```
+
+Run grep in the project folder to find all tags that are necessary to modify. Note: **feel free** to modify another parts of the code (include more functions, classes, etc.)
+```bash
+grep "#TODO" *
+```
+
 **References**
 - https://www.geeksforgeeks.org/maekawas-algorithm-for-mutual-exclusion-in-distributed-system/
 - https://en.wikipedia.org/wiki/Maekawa%27s_algorithm

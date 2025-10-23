@@ -8,6 +8,7 @@ class NodeServer(Thread):
     def __init__(self, node):
         Thread.__init__(self)
         self.node = node
+        self.daemon = True
     
     def run(self):
         self.update()
@@ -44,7 +45,7 @@ class NodeServer(Thread):
         self.server_socket.close()
 
     def process_message(self, msg):
-        # Do shomething
+        #TODO MANDATORY manage the messages according to the Maekawa algorithm (TIP: HERE OR IN ANOTHER FILE...)
         print("Node_%i receive msg: %s"%(self.node.id,msg))
 
  

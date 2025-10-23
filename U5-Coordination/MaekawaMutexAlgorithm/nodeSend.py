@@ -5,6 +5,7 @@ from threading import Event, Thread, Timer
 import utils
 import config
 
+# DONT MODIFY THIS CLASS
 class NodeSend(Thread):
     def __init__(self, node):
         Thread.__init__(self)

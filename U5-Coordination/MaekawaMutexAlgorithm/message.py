@@ -1,5 +1,7 @@
 import json
 
+#TODO MANDATORY implement the Maekawa algorithm messages: REQUEST; RELEASE, REPLY, ... 
+
 class Message(object):
     def __init__(self,
             msg_type=None,
