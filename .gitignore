@@ -6,7 +6,8 @@ NO_*
 
 U5-Coordination/SubastasDeContainers/description.md
 U6-LeaderElection/WithZookeeper/Ignore_mutex.py
-
+U7-DistributedTransictions/WAL-postgress/pgdata/
+U7-DistributedTransictions/WAL-postgress/wal_dump.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

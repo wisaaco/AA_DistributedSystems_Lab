@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: pg-wal-demo
+    hostname: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: hola
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data # Logs and data
