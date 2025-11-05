@@ -21,7 +21,7 @@ class PlayerHandler(socketserver.StreamRequestHandler):
             print(e)
         finally:
             try:
-                self.opponent.send('OTHER_PLAYER_LEFT')
+                self.opponent.send('OTHER_PLAYER_LEFT') 
             except:
                 # Hack for when the game ends, not happy about this
                 pass

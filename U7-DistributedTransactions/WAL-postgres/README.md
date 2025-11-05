@@ -70,7 +70,7 @@ On two terminals
 
 ```bash
 #1
-./do_commands.sh
+./run_demo.sh
 
 #2
 docker exec -it pg-wal-demo bash

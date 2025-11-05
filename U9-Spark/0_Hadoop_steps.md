@@ -2,7 +2,9 @@
 # Actividad HDFS 
 
 Imagen del cluster de hadoop:
-https://github.com/big-data-europe/docker-hadoop
+- https://github.com/big-data-europe/docker-hadoop (>1GB)
+- https://hub.docker.com/r/vulhub/hadoop (<1GB)
+
 
 Una vez funcionando
 ```bash
@@ -20,6 +22,10 @@ hdfs dfs -put <file_name> <path>
 # Have a look at the content of your input file.
 hdfs dfs -cat <input_file>
 ```
+The path of the files:
+```
+hdfs://namenode:9000/hola.txt
+```
 
 ## Ejecución de MapReduce
 
@@ -28,8 +34,9 @@ docker exec -it datanode /bin/bash
 find / -name *mapreduce*
 yarn jar /opt/hadoop-3.2.1/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.1.jar pi 10 10
 ```
-hdfs://namenode:9000/hola.txt
 
+Code:
+[https://github.com/apache/hadoop/tree/branch-2.8.1/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java/org/apache/hadoop/examples](https://github.com/apache/hadoop/tree/branch-2.8.1/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java/org/apache/hadoop/examples)
 
 #### Varios
 
