@@ -30,9 +30,9 @@ hdfs://namenode:9000/hola.txt
 ## Ejecución de MapReduce
 
 ```bash
-docker exec -it datanode /bin/bash
+docker exec -it namenode /bin/bash
 find / -name *mapreduce*
-yarn jar /opt/hadoop-3.2.1/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.1.jar pi 10 10
+yarn jar /opt/hadoop-2.8.1/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.8.1.jar pi 10 10
 ```
 
 Code:

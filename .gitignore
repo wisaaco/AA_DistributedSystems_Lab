@@ -8,7 +8,7 @@ U5-Coordination/SubastasDeContainers/description.md
 U6-LeaderElection/WithZookeeper/Ignore_mutex.py
 U7-DistributedTransactions/WAL-postgres/pgdata/*
 U7-DistributedTransactions/WAL-postgres/wal_dump.txt
-
+U9-Spark/SparkExamples_sol.ipynb
 
 pgdata/*
 
