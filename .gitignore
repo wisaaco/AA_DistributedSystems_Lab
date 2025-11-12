@@ -273,7 +273,7 @@ $RECYCLE.BIN/
 *.log
 *.tmp
 *.temp
-data/
+
 models/
 checkpoints/
 outputs/
