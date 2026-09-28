@@ -47,5 +47,8 @@ class NodeServer(Thread):
     def process_message(self, msg):
         #TODO MANDATORY manage the messages according to the Maekawa algorithm (TIP: HERE OR IN ANOTHER FILE...)
         print("Node_%i receive msg: %s"%(self.node.id,msg))
+        # msr.src....
+        "
+
 
  

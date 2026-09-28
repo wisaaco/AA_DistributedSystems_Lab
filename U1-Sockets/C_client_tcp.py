@@ -1,5 +1,5 @@
 import socket
-# Client side
+# Client side TCP
 
 import sys
 
