@@ -1,9 +1,10 @@
-# Init
-uv init 
-uv add grpcio grpcio-tools
+# Setup & Run
 
-# Package generation
-uv run grpc_tools.protoc \
+## add dependencies
+uv add "grpcio>=1.65.5" "grpcio-tools==1.65.5" "protobuf>=5.26.1,<6"
+
+## proto package generation
+uv run python -m grpc_tools.protoc \
   -I. \
   --python_out=. \
   --grpc_python_out=. \
