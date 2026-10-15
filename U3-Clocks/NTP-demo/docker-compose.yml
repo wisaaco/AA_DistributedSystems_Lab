@@ -1,37 +1,42 @@
-version: "3.9"
-
 services:
   ntp-master:
-    image: ubuntu:22.04
+    build: .
     container_name: ntp-master
-    command: ["/bin/bash", "-c", "apt-get update && apt-get install -y chrony tzdata && \
-              ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
-              chronyd -d -x"]
+    hostname: ntp-master
+    environment:
+      TZ: Asia/Tokyo
     volumes:
       - ./config/master/chrony.conf:/etc/chrony/chrony.conf:ro
     networks:
-      ntp-net:
-        ipv4_address: 172.20.0.10
+      - ntp-net
     cap_add:
       - SYS_TIME
+      - SYS_NICE
+      - NET_BIND_SERVICE
+    security_opt:
+      - seccomp:unconfined
+    init: true
 
   ntp-client:
-    image: ubuntu:22.04
+    build: .
     container_name: ntp-client
-    command: ["/bin/bash", "-c", "apt-get update && apt-get install -y chrony tzdata && \
-              ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime && \
-              chronyd -d -x"]
+    hostname: ntp-client
+    environment:
+      TZ: Europe/Madrid
     volumes:
       - ./config/client/chrony.conf:/etc/chrony/chrony.conf:ro
     networks:
-      ntp-net:
-        ipv4_address: 172.20.0.20
+      - ntp-net
     cap_add:
       - SYS_TIME
+      - SYS_NICE
+      - NET_BIND_SERVICE
+    security_opt:
+      - seccomp:unconfined
+    depends_on:
+      - ntp-master
+    init: true
 
 networks:
   ntp-net:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
