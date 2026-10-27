@@ -5,6 +5,7 @@ NO_*
 .venv/
 
 U5-Coordination/SubastasDeContainers/description.md
+U5-Coordination/WithETCD/notes.md
 U6-LeaderElection/WithZookeeper/Ignore_mutex.py
 U7-DistributedTransactions/WAL-postgres/pgdata/*
 U7-DistributedTransactions/WAL-postgres/wal_dump.txt

@@ -1,0 +1,56 @@
+services:
+  pg-0:
+    image: soldevelo/postgresql-repmgr:16
+    container_name: pg-0
+    hostname: pg-0
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_0_data:/bitnami/postgresql
+      - ./conf/passwd:/etc/passwd:ro
+      - ./conf/pg_hba.conf:/bitnami/repmgr/conf/pg_hba.conf:ro
+    environment:
+      - POSTGRESQL_POSTGRES_PASSWORD=adminpassword
+      - POSTGRESQL_USERNAME=myuser
+      - POSTGRESQL_PASSWORD=mypassword
+      - POSTGRESQL_DATABASE=mydb
+      - REPMGR_PASSWORD=repmgrpassword
+      - REPMGR_PRIMARY_HOST=pg-0
+      - REPMGR_PRIMARY_PORT=5432
+      - REPMGR_PARTNER_NODES=pg-0,pg-1:5432
+      - REPMGR_NODE_NAME=pg-0
+      - REPMGR_NODE_NETWORK_NAME=pg-0
+      - REPMGR_PORT_NUMBER=5432
+      - REPMGR_PGHBA_TRUST_ALL=yes
+
+  pg-1:
+    image: soldevelo/postgresql-repmgr:16
+    container_name: pg-1
+    hostname: pg-1
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_1_data:/bitnami/postgresql
+      - ./conf/passwd:/etc/passwd:ro
+      - ./conf/pg_hba.conf:/bitnami/repmgr/conf/pg_hba.conf:ro
+    depends_on:
+      - pg-0
+    environment:
+      - POSTGRESQL_POSTGRES_PASSWORD=adminpassword
+      - POSTGRESQL_USERNAME=myuser
+      - POSTGRESQL_PASSWORD=mypassword
+      - POSTGRESQL_DATABASE=mydb
+      - REPMGR_PASSWORD=repmgrpassword
+      - REPMGR_PRIMARY_HOST=pg-0
+      - REPMGR_PRIMARY_PORT=5432
+      - REPMGR_PARTNER_NODES=pg-0,pg-1:5432
+      - REPMGR_NODE_NAME=pg-1
+      - REPMGR_NODE_NETWORK_NAME=pg-1
+      - REPMGR_PORT_NUMBER=5432
+      - REPMGR_PGHBA_TRUST_ALL=yes
+
+volumes:
+  pg_0_data:
+    driver: local
+  pg_1_data:
+    driver: local
