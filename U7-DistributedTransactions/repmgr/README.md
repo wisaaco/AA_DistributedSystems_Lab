@@ -7,6 +7,9 @@
 1. Vemos como está montado el clúster:
 
 ```bash
+#### Si segunda vez....
+docker compose down -v 
+
 docker compose up -d
 
 docker exec -it pg-0 repmgr -f /opt/bitnami/repmgr/conf/repmgr.conf cluster show
