@@ -17,13 +17,13 @@ apt install openjdk-17-jdk nano wget
 
 Download Spark:
 - https://spark.apache.org/
-- https://dlcdn.apache.org/spark/spark-3.5.7/spark-3.5.7-bin-hadoop3.tgz
+- https://dlcdn.apache.org/spark/spark-4.2.1/spark-4.2.1-bin-hadoop3.tgz
 
 Steps:
 ```bash
 cd opt
-tar -xf spark-3.5.7-bin-hadoop3.tgz
-cd spark-3.5.7-bin-hadoop3
+tar -xf spark-4.2.1-bin-hadoop3.tgz
+cd spark-4.2.1-bin-hadoop3
 
 # master (log?)
 ./sbin/start-master.sh -h master
